@@ -13,14 +13,12 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _tabcontroller = TabController(length: 3, vsync: this);
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _tabcontroller.dispose();
   }
@@ -29,7 +27,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Aprenda Inglês",textAlign: TextAlign.center,),
+        title: Text(
+          "Aprenda Inglês",
+          textAlign: TextAlign.center,
+        ),
         bottom: TabBar(
           indicatorWeight: 4,
           indicatorColor: Colors.white,
@@ -48,11 +49,14 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           ],
         ),
       ),
-      body: TabBarView(controller: _tabcontroller,children: [
-       Bichos(),
-       Numeros(),
-       Vogais(),
-      ],),
+      body: TabBarView(
+        controller: _tabcontroller,
+        children: [
+          Bichos(),
+          Numeros(),
+          Vogais(),
+        ],
+      ),
     );
   }
 }
